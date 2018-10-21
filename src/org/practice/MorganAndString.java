@@ -15,7 +15,7 @@ public class MorganAndString {
 	}
 	
 	static String morganAndString(String a, String b) {
-		String result = "";
+		StringBuffer result = new StringBuffer();
 		
 		char[] charA = a.toCharArray();
 		List<Character> listA = new ArrayList<>();
@@ -31,41 +31,45 @@ public class MorganAndString {
 			listB.add(c);
 		}		
 		
-		List res = new ArrayList<>();
+		List<Character> res = new ArrayList<>();
 		
-		System.out.println(listA);
-		System.out.println(listB);
+		//System.out.println(listA);
+		//System.out.println(listB);
 		
-		System.out.println(listA.get(0)>listB.get(0));
-		System.out.println(listA.get(0)<listB.get(0));
+		//System.out.println(listA.get(0)>listB.get(0));
+		//System.out.println(listA.get(0)<listB.get(0));
 		
 		
 		
 		
 		while (listA.size() > 0 && listB.size()>0) {
 			if(listA.get(0) < listB.get(0)){
-				res.add(listA.get(0));
+				//res.add(listA.get(0));
+				result.append(listA.get(0));
 				listA.remove(0);
 			}
 			else {
-				res.add(listB.get(0));
+				//res.add(listB.get(0));
+				result.append(listB.get(0));
 				listB.remove(0);
 			}
 		}
 		
 		if(!listA.isEmpty()){
 			for (char c : listA) {
-				res.add(c);
+				//res.add(c);
+				result.append(c);
 			}	
 		} else{
 			for (char c : listB) {
-				res.add(c);
+				//res.add(c);
+				result.append(c);
 			}	
 		}
 		
-		System.out.println(res);
+		System.out.println(result);
 		
-		return res.toString();
+		return result.toString();
     }
 
 }
